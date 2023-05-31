@@ -1,16 +1,6 @@
 version: 0.2
  
 phases:
-  install:
-    commands:
-      - cd src/widget/app
-  pre_build:
-    commands:
-      - npm install
   build:
     commands:
-      - npm run generate
-  post_build:
-    commands:
-      - aws s3 sync ./dist s3://$BUCKET_NAME
-      - aws cloudfront create-invalidation --distribution-id $CloudFrontDistId --paths '/*'
+      - aws s3api put-object --bucket black-may-2023-beta --key index.html --body index.html --acl public-read --content-type text/html

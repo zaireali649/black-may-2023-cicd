@@ -1,0 +1,8 @@
+1) make the object public
+- Edit Block public access (bucket settings)
+- Edit Object Ownership
+- make public using acl
+
+2) using cli commands
+- upload object with public flag
+- why is it asking me to download
